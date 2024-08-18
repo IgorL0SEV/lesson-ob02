@@ -82,12 +82,15 @@ us_base["admin_1"] = admin_1.us_data()
 us_base["admin_2"] = admin_2.us_data()
 
 for k, v in us_base.items():
-    print(f"{k} = {v}")
+    print()
+    print(f"{k}")
+    for key, value in v.items():
+        print(f"{key} : {value}")
 
 print()
 print (f"Удаление пользователя user_1")
 print (f"Удаление администратора admin_2")
-print()
+
 
 if "user_1" in us_base:
     del us_base["user_1"]
@@ -96,28 +99,37 @@ if "admin_2" in us_base:
     del us_base["admin_2"]
 
 for k, v in us_base.items():
-    print(f"{k} = {v}")
+    print()
+    print(f"{k}")
+    for key, value in v.items():
+        print(f"{key} : {value}")
 
 print()
 print (f"Добавление пользователя user_3")
 print (f"Добавление администратора admin_3")
-print()
+
 user_3 = User(4, "Копейкин", "none")
 admin_3 = Admin(6, "Лисичкина", "admin", "not access")
 us_base["user_3"] = user_3.us_data()
 us_base["admin_3"] = admin_3.us_data()
 
 for k, v in us_base.items():
-    print(f"{k} = {v}")
+    print()
+    print(f"{k}")
+    for key, value in v.items():
+        print(f"{key} : {value}")
 
 print()
 print (f"Изменение статуса пользователя user_3: 'none' => 'user'")
 print (f"Изменение статуса администратора admin_3: 'not access' => 'access'")
-print()
+
 user_3.set_us_access("user")
 user_3.update_us_base(us_base,"user_3")
 admin_3.set_status_access("access")
 admin_3.update_us_base(us_base,"admin_3")
 
 for k, v in us_base.items():
-    print(f"{k} = {v}")
+    print()
+    print(f"{k}")
+    for key, value in v.items():
+        print(f"{key} : {value}")
